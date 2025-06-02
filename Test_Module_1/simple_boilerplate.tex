@@ -1,0 +1,33 @@
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+\begin{document}
+
+\section*{Name}
+{{ name }}
+
+\section*{Email}
+\href{mailto:{{ contact.email | default(email) }}}{{ contact.email | default(email) }}
+
+\section*{Skills}
+\begin{itemize}
+{% if skills is string %}
+  \item {{ skills | replace("&", "\\&") | replace("#", "\\#") }}
+{% elif skills is iterable and skills[0] is string %}
+  {% for skill in skills %}
+    \item {{ skill | replace("&", "\\&") | replace("#", "\\#") }}
+  {% endfor %}
+{% elif skills.tech_solutions is defined %}
+  {% for skill in skills.tech_solutions %}
+    \item {{ skill | replace("&", "\\&") | replace("#", "\\#") }}
+  {% endfor %}
+  {% for skill in skills.tools_languages %}
+    \item {{ skill | replace("&", "\\&") | replace("#", "\\#") }}
+  {% endfor %}
+{% endif %}
+\end{itemize}
+
+
+\end{document}
