@@ -33,6 +33,69 @@
   \usepackage{ifthen} % for conditional statements
   \usepackage{needspace} % for avoiding page brake right after the section title
   \usepackage{iftex} % check if engine is pdflatex, xetex or luatex
+
+
+    % Ensure that generate pdf is machine readable/ATS parsable:
+  \ifPDFTeX
+      \input{glyphtounicode}
+      \pdfgentounicode=1
+      \usepackage[T1]{fontenc}
+      \usepackage[utf8]{inputenc}
+      \usepackage{lmodern}
+  \fi
+
+  \usepackage{charter}
+
+  % Some settings:
+  \raggedright
+  \AtBeginEnvironment{adjustwidth}{\partopsep0pt} % remove space before adjustwidth environment
+  \pagestyle{empty} % no header or footer
+  \setcounter{secnumdepth}{0} % no section numbering
+  \setlength{\parindent}{0pt} % no indentation
+  \setlength{\topskip}{0pt} % no top skip
+  \setlength{\columnsep}{0.15cm} % set column seperation
+  \pagenumbering{gobble} % no page numbering
+
+  \titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+
+  \titlespacing{\section}{
+      % left space:
+      -1pt
+  }{
+      % top space:
+      0.3 cm
+  }{
+      % bottom space:
+      0.2 cm
+  } % section title spacing
+
+  \renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$} % custom bullet points
+  \newenvironment{highlights}{
+      \begin{itemize}[
+          topsep=0.10 cm,
+          parsep=0.10 cm,
+          partopsep=0pt,
+          itemsep=0pt,
+          leftmargin=0 cm + 10pt
+      ]
+  }{
+      \end{itemize}
+  } % new environment for highlights
+
+  \newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+  }{
+      \end{itemize}
+  } % new environment for highlights for bullet entries
+
+  
+
 \begin{document}
 
 \section*{Name}
