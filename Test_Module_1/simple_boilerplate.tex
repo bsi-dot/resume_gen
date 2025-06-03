@@ -117,8 +117,48 @@
   }
   {% endraw %}
 
+  {% raw %}
+  \newenvironment{threecolentry}[3][]{
+      \onecolentry
+      \def\thirdColumn{#3}
+      \setcolumnwidth{, \fill, 4.5 cm}
+      \begin{paracol}{3}
+      {\raggedright #2} \switchcolumn
+  }{
+      \switchcolumn \raggedleft \thirdColumn
+      \end{paracol}
+      \endonecolentry
+  }
+  {% endraw %}
+
+  \newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+  }{
+      \par\kern\topsep
+  }
+
+  {% raw %}
+  \newcommand{\placelastupdatedtext}{%
+    \AddToShipoutPictureFG*{%
+      \put(
+          \LenToUnit{\paperwidth-2 cm-0 cm+0.05cm},
+          \LenToUnit{\paperheight-1.0 cm}
+      ){\vtop{{\null}\makebox[0pt][c]{%
+          \small\color{gray}\textit{Last updated in {% endraw %}{{ last_updated }}{% raw %}}%
+          \hspace{\widthof{Last updated in {% endraw %}{{ last_updated }}{% raw %}}}%
+      }}}%
+    }%
+  }
+  {% endraw %}
+
+  % save the original href command in a new command:
+  \let\hrefWithoutArrow\href
+
+
 
 \begin{document}
+
+
 
 \section*{Name}
 {{ name }}
