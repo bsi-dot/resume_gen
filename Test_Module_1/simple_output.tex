@@ -151,65 +151,52 @@
   }
   
 
+  % save the original href command in a new command:
+  \let\hrefWithoutArrow\href
+
 
 
 \begin{document}
+    
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
 
-\section*{Name}
-Basith Mohamed S
 
-\section*{Email}
-\href{mailto:bshahulhamee@umass.edu}bshahulhamee@umass.edu
+    \begin{header}
+      \fontsize{25 pt}{25 pt}\selectfont Basith Mohamed S
 
-\section*{Skills}
-\begin{itemize}
+      \vspace{5 pt}
+      \normalsize
+      \mbox{\hrefWithoutArrow{mailto:bshahulhamee@umass.edu}bshahulhamee@umass.edu}%
+      \kern 5.0 pt%
+      \AND%
+      \kern 5.0 pt%
+      \mbox{\hrefWithoutArrow{}{ (413) 275-6902 }}%
+      \kern 5.0 pt%
+      \AND%
+      \kern 5.0 pt%
+      \mbox{\hrefWithoutArrow{{ contact.linkedin }}{{ contact.linkedin }}}%
+      \kern 5.0 pt%
+      \AND%
+      \kern 5.0 pt%
+      \mbox{{ contact.location }}%
+    \end{header}
+    
 
-  
-    \item Azure Databricks
-  
-    \item Data Factory
-  
-    \item Data Lake
-  
-    \item PowerBI
-  
-    \item Tableau
-  
-    \item Spark
-  
-    \item GIT \& Azure DevOps
-  
-    \item Matlab
-  
-    \item Solidworks
-  
-    \item Fusion360
-  
-    \item LangChain
-  
-    \item LLM
-  
-  
-    \item SQL
-  
-    \item Scala
-  
-    \item Python
-  
-    \item C\#
-  
-    \item PowerBI
-  
-    \item Tableau
-  
-    \item MS Excel
-  
-    \item R
-  
-    \item .NET Framework
+
+
+  \vspace{5 pt - 0.3 cm}
+
   
 
-\end{itemize}
+
+    
+  
+  
 
 
 \end{document}

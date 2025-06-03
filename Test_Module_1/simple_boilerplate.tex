@@ -157,32 +157,46 @@
 
 
 \begin{document}
+    {% raw %}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+
+
+    \begin{header}
+      \fontsize{25 pt}{25 pt}\selectfont {% endraw %}{{ name }}{% raw %}
+
+      \vspace{5 pt}
+      \normalsize
+      \mbox{\hrefWithoutArrow{mailto:{% endraw %}{{ contact.email }}{% raw %}}{% endraw %}{{ contact.email }}{% raw %}}%
+      \kern 5.0 pt%
+      \AND%
+      \kern 5.0 pt%
+      \mbox{\hrefWithoutArrow{}{ {% endraw %}{{ contact.phone }}{% raw %} }}%
+      \kern 5.0 pt%
+      \AND%
+      \kern 5.0 pt%
+      \mbox{\hrefWithoutArrow{{ contact.linkedin }}{{ contact.linkedin }}}%
+      \kern 5.0 pt%
+      \AND%
+      \kern 5.0 pt%
+      \mbox{{ contact.location }}%
+    \end{header}
+    {% endraw %}
 
 
 
-\section*{Name}
-{{ name }}
+  \vspace{5 pt - 0.3 cm}
 
-\section*{Email}
-\href{mailto:{{ contact.email | default(email) }}}{{ contact.email | default(email) }}
+  
 
-\section*{Skills}
-\begin{itemize}
-{% if skills is string %}
-  \item {{ skills | replace("&", "\\&") | replace("#", "\\#") }}
-{% elif skills is iterable and skills[0] is string %}
-  {% for skill in skills %}
-    \item {{ skill | replace("&", "\\&")  | replace("#", "\\#") }}
-  {% endfor %}
-{% elif skills.tech_solutions is defined %}
-  {% for skill in skills.tech_solutions %}
-    \item {{ skill | replace("&", "\\&") | replace("#", "\\#") }}
-  {% endfor %}
-  {% for skill in skills.tools_languages %}
-    \item {{ skill | replace("&", "\\&") | replace("#", "\\#") }}
-  {% endfor %}
-{% endif %}
-\end{itemize}
+
+    
+  
+  
 
 
 \end{document}

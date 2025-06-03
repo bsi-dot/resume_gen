@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.5.29)  2 JUN 2025 21:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.5.29)  3 JUN 2025 19:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -465,31 +465,31 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 Package: charter 2020/03/25 PSNFSS-v9.3 (P.Dyballa) 
 )
 LaTeX Font Info:    Trying to load font information for T1+bch on input line 15
-6.
+9.
 
 (c:/texlive/2025/texmf-dist/tex/latex/psnfss/t1bch.fd
 File: t1bch.fd 2004/10/18 font definitions for T1/bch.
 ) (./simple_output.aux)
 \openout1 = `simple_output.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 156.
-LaTeX Font Info:    ... okay on input line 156.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 159.
+LaTeX Font Info:    ... okay on input line 159.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -539,40 +539,42 @@ LaTeX Font Info:    ... okay on input line 156.
 \makeMPintoPDFobject=\count333
 \everyMPtoPDFconversion=\toks32
 )
-Package hyperref Info: Link coloring ON on input line 156.
+Package hyperref Info: Link coloring ON on input line 159.
+\ANDbox=\box66
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-68.
+66.
  (c:/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-68.
+66.
 
 (c:/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-168.
+166.
 
 (c:/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-168.
+166.
 
 (c:/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 168.
+(Font)              <10> on input line 166.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 168.
+(Font)              <7> on input line 166.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 168.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 168.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 168.
+(Font)              <5> on input line 166.
+
+
+Package hyperref Warning: Suppressing link with empty target on input line 178.
+
+
 
 
 [1
@@ -592,22 +594,25 @@ Package lastpage Warning: \@currentHpage is
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-29>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 15309 strings out of 469590
- 257093 string characters out of 5474519
- 657318 words of memory out of 5000000
- 41965 multiletter control sequences out of 15000+600000
- 655244 words of font info for 63 fonts, out of 8000000 for 9000
+ 15293 strings out of 469590
+ 256915 string characters out of 5474519
+ 646324 words of memory out of 5000000
+ 41956 multiletter control sequences out of 15000+600000
+ 644242 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,7n,79p,318b,453s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><c:/texli
-ve/2025/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb><c:/texlive/2025/tex
-mf-dist/fonts/type1/public/lm/lmsy9.pfb>
-Output written on simple_output.pdf (1 page, 29344 bytes).
+ 75i,5n,79p,318b,453s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb><c:/texli
+ve/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
+Output written on simple_output.pdf (1 page, 18871 bytes).
 PDF statistics:
- 31 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
+ 27 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
