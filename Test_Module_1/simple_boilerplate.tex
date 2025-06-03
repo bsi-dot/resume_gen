@@ -80,7 +80,7 @@
       ]
   }{
       \end{itemize}
-  } % new environment for highlights
+  } %% new environment for highlights
 
   \newenvironment{highlightsforbulletentries}{
     \begin{itemize}[
@@ -92,9 +92,19 @@
     ]
   }{
       \end{itemize}
-  } % new environment for highlights for bullet entries
+  } %% new environment for highlights for bullet entries
 
-  
+  \newenvironment{onecolentry}{
+    \begin{adjustwidth}{
+        0 cm + 0.00001 cm
+    }{
+        0 cm + 0.00001 cm
+    }
+  }{
+      \end{adjustwidth}
+  } %% new environment for one column entries
+
+
 
 \begin{document}
 
@@ -110,7 +120,7 @@
   \item {{ skills | replace("&", "\\&") | replace("#", "\\#") }}
 {% elif skills is iterable and skills[0] is string %}
   {% for skill in skills %}
-    \item {{ skill | replace("&", "\\&") | replace("#", "\\#") }}
+    \item {{ skill | replace("&", "\\&")  | replace("#", "\\#") }}
   {% endfor %}
 {% elif skills.tech_solutions is defined %}
   {% for skill in skills.tech_solutions %}
