@@ -104,6 +104,18 @@
       \end{adjustwidth}
   } %% new environment for one column entries
 
+  
+  \newenvironment{twocolentry}[2][]{
+      \onecolentry
+      \def\secondColumn{#2}
+      \setcolumnwidth{\fill, 4.5 cm}
+      \begin{paracol}{2}
+  }{
+      \switchcolumn \raggedleft \secondColumn
+      \end{paracol}
+      \endonecolentry
+  }
+  
 
 
 \begin{document}
