@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.5.29)  3 JUN 2025 19:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.5.29)  14 JUN 2025 21:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -575,6 +575,10 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 Package hyperref Warning: Suppressing link with empty target on input line 178.
 
 
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 226.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 226.
 
 
 [1
@@ -594,25 +598,23 @@ Package lastpage Warning: \@currentHpage is
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-29>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 15293 strings out of 469590
- 256915 string characters out of 5474519
- 646324 words of memory out of 5000000
- 41956 multiletter control sequences out of 15000+600000
- 644242 words of font info for 55 fonts, out of 8000000 for 9000
+ 15473 strings out of 469590
+ 260169 string characters out of 5474519
+ 668324 words of memory out of 5000000
+ 42121 multiletter control sequences out of 15000+600000
+ 665267 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,5n,79p,318b,453s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb><c:/texli
-ve/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on simple_output.pdf (1 page, 18871 bytes).
+ 75i,7n,79p,318b,453s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><c:/texli
+ve/2025/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb><c:/texlive/2025/tex
+mf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type
+1/public/lm/lmsy9.pfb>
+Output written on simple_output.pdf (1 page, 43064 bytes).
 PDF statistics:
- 27 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
- 2 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 54 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
+ 6 named destinations out of 1000 (max. 500000)
+ 33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

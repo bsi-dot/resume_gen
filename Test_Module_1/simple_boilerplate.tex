@@ -191,6 +191,70 @@
 
   \vspace{5 pt - 0.3 cm}
 
+  \section{Education}
+    {% for ed in education %}
+    \begin{twocolentry}{ {{ ed.graduation }} }
+        \textbf{ {{ ed.degree }} } \\
+        {{ ed.school }} \\
+        {\footnotesize \textbf{GPA : {{ ed.gpa }} }} \\
+        {% if ed.courses %}
+        {\footnotesize \textbf{Relevant Courses:} {{ ed.courses | join(", ") }} }
+        {% endif %}
+    \end{twocolentry}
+    \vspace{0.2cm}
+    {% endfor %}
+
+
+  \section{Experience} 
+    {% for exp in experience %}
+    \begin{twocolentry}{ {{ exp.start }} -- {{ exp.end }} }
+        \textbf{ {{ exp.title | replace("&", "\&") }} }, {{ exp.company }} -- {{ exp.location }}
+    \end{twocolentry}
+
+    \vspace{0.10 cm}
+    \begin{onecolentry}
+    \begin{highlights}
+    {% for item in exp.highlights %}
+        \item {{ item | replace("&", "\&") | replace("#", "\#") }}
+    {% endfor %}
+    \end{highlights}
+    \end{onecolentry}
+    \vspace{0.2 cm}
+    {% endfor %}
+
+  \section{Projects}
+
+    \begin{onecolentry}
+        \begin{itemize}
+        {% for proj in projects %}
+            \item {{ proj.title | replace("&", "\&") | replace("#", "\#") }}{% if proj.year %}, {{ proj.year }}{% endif %}
+        {% endfor %}
+        \end{itemize}
+        \end{onecolentry}
+
+    \section{Skills}
+
+    \begin{onecolentry}
+    \begin{itemize}
+        {% if skills.tech_solutions %}
+        \item Technology Solutions: {{ skills.tech_solutions | join(", ") | replace("&", "\&") | replace("#", "\#") }}
+        {% endif %}
+        {% if skills.tools_languages %}
+        \item Tools and Languages: {{ skills.tools_languages | join(", ") | replace("&", "\&") | replace("#", "\#") }}
+        {% endif %}
+        {% if certifications %}
+        \item Certifications:
+        \begin{itemize}
+            {% for cert in certifications %}
+            \item {{ cert | replace("&", "\&") | replace("#", "\#") }}
+            {% endfor %}
+        \end{itemize}
+        {% endif %}
+    \end{itemize}
+    \end{onecolentry}
+
+
+
   
 
 
