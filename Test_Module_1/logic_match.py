@@ -29,7 +29,21 @@ def score_optional_sections_cosine(full_resume, optional_fields, job_description
         if not content:
             continue
 
-        if option is True:
+        if section == "skills":
+            # Flatten all subfields like tech_solutions, tools_languages, etc.
+            skills = []
+            for skill_field in option if isinstance(option, set) else []:
+                skill_items = content.get(skill_field, [])
+                if isinstance(skill_items, list):
+                    skills.extend(skill_items)
+                elif isinstance(skill_items, str):
+                    skills.append(skill_items)
+
+            for skill in skills:
+                similarity = float(util.cos_sim(embed(str(skill)), job_embedding))
+                scored[section].append((similarity, skill))
+        
+        elif option is True:
             entries = content if isinstance(content, list) else [content]
             for item in entries:
                 text = str(item)
@@ -45,7 +59,9 @@ def score_optional_sections_cosine(full_resume, optional_fields, job_description
                         text = str(value)
                         similarity = float(util.cos_sim(embed(text), job_embedding))
                         scored[section].append((similarity, item, field))
+    
     return scored
+
 
 # -------------------- Load Inputs --------------------
 
