@@ -1,11 +1,29 @@
-We’re looking for someone who takes initiative, perseveres, and stay curious. You like to work on meaningful innovative projects and are energized by lifelong learning.
+Key Responsibilities Includes
 
-    Educational requirements: Current Master’s student at a university or recent graduate with preferred fields of study in Business Analytics, Computer Science, System Informatics, or relevant field
-    Eligibility: Must be currently enrolled, or recently graduated (start date must be within 6 months of graduation date) from a coding academy/bootcamp, apprenticeship, associate, bachelor’s, master’s, or JD/PhD program
-    Have some experiences as product manager or project manager preferred
-    Familiarity with Aha! Roadmap Software would be a great advantage
-    Willing to work with colleagues in other time zones (CET/EST/CST/PST)
+    Conducting literature reviews to identify new detection methods for GenAI-generated images
+    Investigating innovative approaches to create training and evaluation datasets for image authenticity
+    Implementing pretrained detection models on internal datasets and analyze their performance
+    Training and fine-tuning detection models using in-house datasets, measuring effectiveness in real-time scenarios
 
-Soft skills: Organized, self-starter, detail-driven, responsive, and able to multi-task promptly, strong interpersonal skills, ability to collaborate and develop good relationships with stakeholders, strong work ethic and positive attitude, ability to learn quickly, collect and synthesize information easily
+This internship offers a unique opportunity to work on a cutting-edge problem, leveraging your knowledge of GenAI methods. You will have the chance to participate in exploratory research that directly impacts our platform's security and integrity, while also gaining valuable experience in the field.
 
- 
+A Typical Day
+
+As an intern, you’ll be integrated into a team where you’ll contribute to challenging projects. Your manager, team, and our incredible employee community will strive to be superhosts to you during the summer. We provide the support, mentorship, fun, and real world experience needed to accelerate your learning and make a real impact on our product, as Airbnb revolutionizes connection, belonging, and travel. You can expect to:
+
+    Collaborate with multiple team members to achieve project milestones
+    Communicate with stakeholders across different teams to provide project updates
+    Seek and provide feedback throughout the internship
+    Actively participate in and contribute to the Data Science org and broader Airbnb community
+
+Your Expertise
+
+This opportunity is for full-time Doctorate students enrolled at a nationally-accredited university in the United States graduating between December 2025 - June 2026 with the following background:
+
+    Studying computer science, computer engineering, data science, or an equivalent technical field
+    Knowledge of cutting edge GenAI techniques in the image domain
+    Ability to read and summarize papers from the literature
+    Solid Python coding skills
+    Familiarity with at least one DNN framework (PyTorch or Tensorflow)
+    Demonstrated interest in high growth, technology, and/or hospitality companies
+    Work authorization for employment in the United States is required (CPT/OPT with 2-year STEM extension is accepted)

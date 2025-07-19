@@ -29,45 +29,55 @@ def score_optional_sections_cosine(full_resume, optional_fields, job_description
         if not content:
             continue
 
-        if section == "skills":
-            # Flatten all subfields like tech_solutions, tools_languages, etc.
-            skills = []
-            for skill_field in option if isinstance(option, set) else []:
-                skill_items = content.get(skill_field, [])
-                if isinstance(skill_items, list):
-                    skills.extend(skill_items)
-                elif isinstance(skill_items, str):
-                    skills.append(skill_items)
-
-            for skill in skills:
-                similarity = float(util.cos_sim(embed(str(skill)), job_embedding))
-                scored[section].append((similarity, skill))
-        
-        elif option is True:
+        if option is True:
             entries = content if isinstance(content, list) else [content]
             for item in entries:
-                text = str(item)
-                similarity = float(util.cos_sim(embed(text), job_embedding))
-                scored[section].append((similarity, item))
+                # If item is dict, dive deeper and score each nested value
+                if isinstance(item, dict):
+                    for key, value in item.items():
+                        if isinstance(value, str):
+                            # Split on commas if multiple items in one string
+                            for part in value.split(','):
+                                part = part.strip()
+                                if part:
+                                    similarity = float(util.cos_sim(embed(part), job_embedding))
+                                    scored[section].append((similarity, part))
+                        else:
+                            # Directly score non-split strings or structured values
+                            similarity = float(util.cos_sim(embed(str(value)), job_embedding))
+                            scored[section].append((similarity, value))
+                else:
+                    # Score entire string/block
+                    text = str(item)
+                    similarity = float(util.cos_sim(embed(text), job_embedding))
+                    scored[section].append((similarity, item))
 
         elif isinstance(option, set):
             entries = content if isinstance(content, list) else [content]
             for item in entries:
                 for field in option:
-                    value = item.get(field)
+                    value = item.get(field) if isinstance(item, dict) else None
                     if value:
-                        text = str(value)
-                        similarity = float(util.cos_sim(embed(text), job_embedding))
-                        scored[section].append((similarity, item, field))
-    
+                        # If value is a string and looks comma-separated, break it up
+                        if isinstance(value, str):
+                            for part in value.split(','):
+                                part = part.strip()
+                                if part:
+                                    similarity = float(util.cos_sim(embed(part), job_embedding))
+                                    scored[section].append((similarity, part, field))
+                        else:
+                            similarity = float(util.cos_sim(embed(str(value)), job_embedding))
+                            scored[section].append((similarity, value, field))
+
     return scored
+
 
 
 # -------------------- Load Inputs --------------------
 
 with open('config.yaml') as f:
     config = yaml.safe_load(f)
-
+ 
 with open('full_resume.yaml') as f:
     full_resume = yaml.safe_load(f)
 
@@ -85,6 +95,22 @@ scored_sections = score_optional_sections_cosine(full_resume, optional_fields, j
 for section, items in scored_sections.items():
     print(f"\nSECTION: {section}")
     sorted_items = sorted(items, reverse=True, key=lambda x: x[0])
+
     for match in sorted_items:
-        print(f"SCORE: {match[0]:.4f}")
-        print("CONTENT:", match[1] if optional_fields[section] is True else match[1].get(match[2]))
+        score = match[0]
+
+        # match has 2 elements: (score, item)
+        if len(match) == 2:
+            content = match[1]
+
+        # match has 3 elements: (score, item, field)
+        elif len(match) == 3:
+            entry, field = match[1], match[2]
+            content = entry.get(field, "") if isinstance(entry, dict) else str(entry)
+
+        else:
+            content = "UNKNOWN STRUCTURE"
+
+        print(f"SCORE: {score:.4f}")
+        print("CONTENT:", content)
+
