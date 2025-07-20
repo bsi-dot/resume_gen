@@ -1,0 +1,13 @@
+# Virtual environments
+resume-env/
+venv/
+.env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Large files
+*.dll
+*.lib
+*.pth
