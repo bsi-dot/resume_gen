@@ -1,0 +1,105 @@
+name: Basith Mohamed S
+contact:
+  email: bshahulhamee@umass.edu
+  phone: "(413) 275-6902"
+  linkedin: linkedin.com/in/basith-mohamed
+  location: Amherst, MA
+
+education:
+  - degree: Master of Science in Engineering Management
+    school: University of Massachusetts Amherst
+    gpa: 3.9
+    graduation: May 2026
+    courses:
+      - Descriptive Analytics
+      - Operations Management
+      - Predictive Analytics
+      - Prescriptive Analytics
+      - Placeholder Course 1 
+      - Placeholder Course 2 
+      - Placeholder Course 3 
+  - degree: Bachelors in Instrumentation and Control Engineering
+    school: National Institute of Technology Tiruchirapalli
+    gpa: 7.91
+    graduation: Jul 2021
+
+experience:
+  - title: Data & Analytics Consul  tant
+    company: Thorogood Associates
+    location: Bengaluru, India
+    start: July 2022
+    end: July 2024
+    highlights:
+      - Worked closely with the stakeholders of one of the top FMCG companies
+      - Took ownership of the development and maintenance of the RTR and MTD Streams
+      - Collaborated with diverse client teams
+      - Developed, deployed and maintained control dashboards
+      - Conceived and implemented two pivotal internal automation solutions
+      - Did a very interesting placeholder work 1 
+      - Archieved a mildly difficult placeholder task with a team of teams.
+  - title: Graduate Engineering Trainee
+    company: Dr Lal PathLabs
+    location: New Delhi
+    start: Aug 2021
+    end: July 2022
+    highlights:
+      - Designed, implemented, and deployed an end-to-end automation product
+      - Managed the development and continuous maintenance
+      - Developed proof-of-concepts for data analytics models
+      - Engineered an innovative workflow automation solution
+      - Developed a sophisticated thing with the help of some placeholder people
+
+projects:
+  - title: NLP Business data insight generation and visualization on participant information (SAE India)
+    year: 2022
+  - title: Cortico-Muscular Coherence Analysis on Leg Movements
+    year: 2021
+  - title: Solar-powered washing machine for rural applications
+    year: 2021
+  - title: Suspension system modelling for an autonomous agricultural rover (SenseGrass Inc)
+    year: 2018
+  - title: Control System development for a Automatic Car Parking System
+    year: 2018
+  - title: RPA Desktop Workflow Optimizer with OpenAI API
+    year:
+  - title: Placeholder Title Project 1
+    year: 2017 
+  - title: Placeholder Title Project 2 
+
+skills:
+  tech_solutions:
+    - Azure Databricks
+    - Data Factory
+    - Data Lake
+    - PowerBI
+    - Tableau
+    - Spark
+    - GIT & Azure DevOps
+    - Matlab
+    - Solidworks
+    - Fusion360
+    - LangChain
+    - LLM
+    - PH1 
+    - PH2
+    - PH3 
+    - PH4
+  tools_languages:
+    - SQL
+    - Scala
+    - Python
+    - C#
+    - PowerBI
+    - Tableau
+    - MS Excel
+    - R
+    - .NET Framework
+    - PHT1
+    - PHT2 
+    - PHT3 
+    - PHT4 
+
+certifications:
+  - Certificate Program in Business Analytics and Artificial Intelligence - Virginia Tech, India (Nov 2022)
+  - MOOCs: Data Visualization with Tableau, Business Metrics for Data-Driven Companies
+  - Placeholder Cert 1 

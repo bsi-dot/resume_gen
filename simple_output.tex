@@ -104,7 +104,7 @@
       \end{adjustwidth}
   } %% new environment for one column entries
 
-  {% raw %}
+  
   \newenvironment{twocolentry}[2][]{
       \onecolentry
       \def\secondColumn{#2}
@@ -115,9 +115,9 @@
       \end{paracol}
       \endonecolentry
   }
-  {% endraw %}
+  
 
-  {% raw %}
+  
   \newenvironment{threecolentry}[3][]{
       \onecolentry
       \def\thirdColumn{#3}
@@ -129,7 +129,7 @@
       \end{paracol}
       \endonecolentry
   }
-  {% endraw %}
+  
 
   \newenvironment{header}{
     \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
@@ -137,19 +137,19 @@
       \par\kern\topsep
   }
 
-  {% raw %}
+  
   \newcommand{\placelastupdatedtext}{%
     \AddToShipoutPictureFG*{%
       \put(
           \LenToUnit{\paperwidth-2 cm-0 cm+0.05cm},
           \LenToUnit{\paperheight-1.0 cm}
       ){\vtop{{\null}\makebox[0pt][c]{%
-          \small\color{gray}\textit{Last updated in {% endraw %}{{ last_updated }}{% raw %}}%
-          \hspace{\widthof{Last updated in {% endraw %}{{ last_updated }}{% raw %}}}%
+          \small\color{gray}\textit{Last updated in }%
+          \hspace{\widthof{Last updated in }}%
       }}}%
     }%
   }
-  {% endraw %}
+  
 
   % save the original href command in a new command:
   \let\hrefWithoutArrow\href
@@ -157,7 +157,7 @@
 
 
 \begin{document}
-    {% raw %}
+    
     \newcommand{\AND}{\unskip
         \cleaders\copy\ANDbox\hskip\wd\ANDbox
         \ignorespaces
@@ -167,15 +167,15 @@
 
 
     \begin{header}
-      \fontsize{25 pt}{25 pt}\selectfont {% endraw %}{{ name }}{% raw %}
+      \fontsize{25 pt}{25 pt}\selectfont Basith Mohamed S
 
       \vspace{5 pt}
       \normalsize
-      \mbox{\hrefWithoutArrow{mailto:{% endraw %}{{ contact.email }}{% raw %}}{% endraw %}{{ contact.email }}{% raw %}}%
+      \mbox{\hrefWithoutArrow{mailto:bshahulhamee@umass.edu}bshahulhamee@umass.edu}%
       \kern 5.0 pt%
       \AND%
       \kern 5.0 pt%
-      \mbox{\hrefWithoutArrow{}{ {% endraw %}{{ contact.phone }}{% raw %} }}%
+      \mbox{\hrefWithoutArrow{}{ (413) 275-6902 }}%
       \kern 5.0 pt%
       \AND%
       \kern 5.0 pt%
@@ -185,50 +185,96 @@
       \kern 5.0 pt%
       \mbox{{ contact.location }}%
     \end{header}
-    {% endraw %}
+    
 
 
 
   \vspace{5 pt - 0.3 cm}
 
   \section{Education}
-    {% for ed in education %}
-    \begin{twocolentry}{ {{ ed.graduation }} }
-        \textbf{ {{ ed.degree }} } \\
-        {{ ed.school }} \\
-        {\footnotesize \textbf{GPA : {{ ed.gpa }} }} \\
-        {% if ed.courses %}
-        {\footnotesize \textbf{Relevant Courses:} {{ ed.courses | join(", ") }} }
-        {% endif %}
+    
+    \begin{twocolentry}{ May 2026 }
+        \textbf{ Master of Science in Engineering Management } \\
+        University of Massachusetts Amherst \\
+        {\footnotesize \textbf{GPA : 3.9 }} \\
+        
+        {\footnotesize \textbf{Relevant Courses:} Descriptive Analytics, Operations Management, Predictive Analytics, Prescriptive Analytics }
+        
     \end{twocolentry}
     \vspace{0.2cm}
-    {% endfor %}
+    
+    \begin{twocolentry}{ Jul 2021 }
+        \textbf{ Bachelors in Instrumentation and Control Engineering } \\
+        National Institute of Technology Tiruchirapalli \\
+        {\footnotesize \textbf{GPA : 7.91 }} \\
+        
+    \end{twocolentry}
+    \vspace{0.2cm}
+    
 
 
   \section{Experience} 
-    {% for exp in experience %}
-    \begin{twocolentry}{ {{ exp.start }} -- {{ exp.end }} }
-        \textbf{ {{ exp.title | replace("&", "\&") }} }, {{ exp.company }} -- {{ exp.location }}
+    
+    \begin{twocolentry}{ July 2022 -- July 2024 }
+        \textbf{ Data \& Analytics Consul  tant }, Thorogood Associates -- Bengaluru, India
     \end{twocolentry}
 
     \vspace{0.10 cm}
     \begin{onecolentry}
     \begin{highlights}
-    {% for item in exp.highlights %}
-        \item {{ item | replace("&", "\&") | replace("#", "\#") }}
-    {% endfor %}
+    
+        \item Worked closely with the stakeholders of one of the top FMCG companies...
+    
+        \item Took ownership of the development and maintenance of the RTR and MTD Streams...
+    
+        \item Collaborated with diverse client teams...
+    
+        \item Developed, deployed and maintained control dashboards...
+    
+        \item Conceived and implemented two pivotal internal automation solutions...
+    
     \end{highlights}
     \end{onecolentry}
     \vspace{0.2 cm}
-    {% endfor %}
+    
+    \begin{twocolentry}{ Aug 2021 -- July 2022 }
+        \textbf{ Graduate Engineering Trainee }, Dr Lal PathLabs -- New Delhi
+    \end{twocolentry}
+
+    \vspace{0.10 cm}
+    \begin{onecolentry}
+    \begin{highlights}
+    
+        \item Designed, implemented, and deployed an end-to-end automation product...
+    
+        \item Managed the development and continuous maintenance...
+    
+        \item Developed proof-of-concepts for data analytics models...
+    
+        \item Engineered an innovative workflow automation solution...
+    
+    \end{highlights}
+    \end{onecolentry}
+    \vspace{0.2 cm}
+    
 
   \section{Projects}
 
     \begin{onecolentry}
         \begin{itemize}
-        {% for proj in projects %}
-            \item {{ proj.title | replace("&", "\&") | replace("#", "\#") }}{% if proj.year %}, {{ proj.year }}{% endif %}
-        {% endfor %}
+        
+            \item NLP Business data insight generation and visualization on participant information (SAE India), 2022
+        
+            \item Cortico-Muscular Coherence Analysis on Leg Movements, 2021
+        
+            \item Solar-powered washing machine for rural applications, 2021
+        
+            \item Suspension system modelling for an autonomous agricultural rover (SenseGrass Inc), 2018
+        
+            \item Control System development for a Automatic Car Parking System, 2018
+        
+            \item RPA Desktop Workflow Optimizer with OpenAI API
+        
         \end{itemize}
         \end{onecolentry}
 
@@ -236,20 +282,22 @@
 
     \begin{onecolentry}
     \begin{itemize}
-        {% if skills.tech_solutions %}
-        \item Technology Solutions: {{ skills.tech_solutions | join(", ") | replace("&", "\&") | replace("#", "\#") }}
-        {% endif %}
-        {% if skills.tools_languages %}
-        \item Tools and Languages: {{ skills.tools_languages | join(", ") | replace("&", "\&") | replace("#", "\#") }}
-        {% endif %}
-        {% if certifications %}
+        
+        \item Technology Solutions: Azure Databricks, Data Factory, Data Lake, PowerBI, Tableau, Spark, GIT \& Azure DevOps, Matlab, Solidworks, Fusion360, LangChain, LLM
+        
+        
+        \item Tools and Languages: SQL, Scala, Python, C\#, PowerBI, Tableau, MS Excel, R, .NET Framework
+        
+        
         \item Certifications:
         \begin{itemize}
-            {% for cert in certifications %}
-            \item {{ cert | replace("&", "\&") | replace("#", "\#") }}
-            {% endfor %}
+            
+            \item Certificate Program in Business Analytics and Artificial Intelligence - Virginia Tech, India (Nov 2022)
+            
+            \item {'MOOCs': 'Data Visualization with Tableau, Business Metrics for Data-Driven Companies'}
+            
         \end{itemize}
-        {% endif %}
+        
     \end{itemize}
     \end{onecolentry}
 

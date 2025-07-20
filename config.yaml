@@ -1,0 +1,11 @@
+optional_fields:
+  education:
+    - courses
+  experience:
+    - highlights
+  projects: true
+  skills:
+    - tech_solutions
+    - tools_languages
+  certifications: true
+
