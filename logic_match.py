@@ -32,42 +32,50 @@ def score_optional_sections_cosine(full_resume, optional_fields, job_description
         if option is True:
             entries = content if isinstance(content, list) else [content]
             for item in entries:
-                # If item is dict, dive deeper and score each nested value
                 if isinstance(item, dict):
                     for key, value in item.items():
                         if isinstance(value, str):
-                            # Split on commas if multiple items in one string
                             for part in value.split(','):
                                 part = part.strip()
                                 if part:
                                     similarity = float(util.cos_sim(embed(part), job_embedding))
                                     scored[section].append((similarity, part))
-                        else:
-                            # Directly score non-split strings or structured values
-                            similarity = float(util.cos_sim(embed(str(value)), job_embedding))
-                            scored[section].append((similarity, value))
+                        elif isinstance(value, list):
+                            for val in value:
+                                val = str(val).strip()
+                                if val:
+                                    similarity = float(util.cos_sim(embed(val), job_embedding))
+                                    scored[section].append((similarity, val))
                 else:
-                    # Score entire string/block
-                    text = str(item)
+                    text = str(item).strip()
                     similarity = float(util.cos_sim(embed(text), job_embedding))
-                    scored[section].append((similarity, item))
+                    scored[section].append((similarity, text))
 
         elif isinstance(option, set):
             entries = content if isinstance(content, list) else [content]
-            for item in entries:
+            for entry in entries:
+                if not isinstance(entry, dict):
+                    continue
+
+                identifier = entry.get("company") or entry.get("title") or "unknown"
+
                 for field in option:
-                    value = item.get(field) if isinstance(item, dict) else None
-                    if value:
-                        # If value is a string and looks comma-separated, break it up
-                        if isinstance(value, str):
-                            for part in value.split(','):
-                                part = part.strip()
-                                if part:
-                                    similarity = float(util.cos_sim(embed(part), job_embedding))
-                                    scored[section].append((similarity, part, field))
-                        else:
-                            similarity = float(util.cos_sim(embed(str(value)), job_embedding))
-                            scored[section].append((similarity, value, field))
+                    value = entry.get(field)
+
+                    # Handle list fields like highlights, courses, etc.
+                    if isinstance(value, list):
+                        for item in value:
+                            item = str(item).strip()
+                            if item:
+                                similarity = float(util.cos_sim(embed(item), job_embedding))
+                                scored[section].append((similarity, item, field, identifier))
+
+                    elif isinstance(value, str):
+                        for part in value.split(','):
+                            part = part.strip()
+                            if part:
+                                similarity = float(util.cos_sim(embed(part), job_embedding))
+                                scored[section].append((similarity, part, field, identifier))
 
     return scored
 
@@ -96,21 +104,24 @@ for section, items in scored_sections.items():
     print(f"\nSECTION: {section}")
     sorted_items = sorted(items, reverse=True, key=lambda x: x[0])
 
-    for match in sorted_items:
-        score = match[0]
+    # If subsection grouping is available (4-tuple)
+    if sorted_items and len(sorted_items[0]) == 4:
+        grouped = defaultdict(list)
+        for score, content, field, subgroup in sorted_items:
+            grouped[subgroup].append((score, content))
 
-        # match has 2 elements: (score, item)
-        if len(match) == 2:
-            content = match[1]
+        for subgroup, entries in grouped.items():
+            print(f"\n-- {subgroup}")
+            for score, content in entries:
+                print(f"  SCORE: {score:.4f}")
+                print(f"  CONTENT: {content}")
 
-        # match has 3 elements: (score, item, field)
-        elif len(match) == 3:
-            entry, field = match[1], match[2]
-            content = entry.get(field, "") if isinstance(entry, dict) else str(entry)
+    else:
+        # Fallback for regular fields
+        for match in sorted_items:
+            score = match[0]
+            content = match[1] if len(match) == 2 else match[1].get(match[2], "") if isinstance(match[1], dict) else str(match[1])
+            print(f"SCORE: {score:.4f}")
+            print("CONTENT:", content)
 
-        else:
-            content = "UNKNOWN STRUCTURE"
-
-        print(f"SCORE: {score:.4f}")
-        print("CONTENT:", content)
 
